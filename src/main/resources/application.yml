@@ -1,0 +1,27 @@
+server.port: 8083
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+  #        destination: <Blank intentionally>
+          content-type: application/json
+          producer:
+            partitionKeyExpression: "1"
+        input: 
+          group: grp
+   #       destination: <Blank intentionally>
+          content-type: application/json
+          errorChannelEnabled: true
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+    credentials:
+   #   accessKey: <Blank intentionally>
+   #   secretKey: <Blank intentionally>
+   # kinesis: <Blank intentionally>
+   #   endpoint: <Blank intentionally>
+
